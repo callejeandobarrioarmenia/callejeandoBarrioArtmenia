@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pronto - Callejeando por el barrio Armenia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+            background: #f5f5f5;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c2c 100%);
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo-text {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .nav-menu a:hover {
+            opacity: 0.8;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(45,80,22,0.9) 0%, rgba(74,124,44,0.9) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%234a7c2c" width="1200" height="800"/><g fill="%23fff" opacity="0.05"><circle cx="100" cy="100" r="50"/><circle cx="300" cy="200" r="70"/><circle cx="600" cy="150" r="60"/><circle cx="900" cy="300" r="80"/><circle cx="1100" cy="100" r="55"/><circle cx="400" cy="500" r="65"/><circle cx="800" cy="600" r="75"/></g></svg>') center/cover;
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+            animation: movePattern 30s linear infinite;
+        }
+
+        @keyframes movePattern {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(40px, 40px); }
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+            max-width: 800px;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 20px rgba(0,0,0,0.5);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.4em;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            color: #2d5016;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .presentacion {
+            background: white;
+        }
+
+        .presentacion-content {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        .presentacion-content p {
+            margin-bottom: 20px;
+        }
+
+        .mapa-section {
+            background: #f9f9f9;
+        }
+
+        .mapa-container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .mapa-placeholder {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            color: #2d5016;
+            margin-bottom: 20px;
+        }
+
+        .recorrido {
+            background: white;
+        }
+
+        .recorrido-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .recorrido-card {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            padding: 30px;
+            border-radius: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .recorrido-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .recorrido-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .recorrido-card h3 {
+            font-size: 1.5em;
+            color: #2d5016;
+            margin-bottom: 15px;
+        }
+
+        .recorrido-card p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        footer {
+            background: #2d5016;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #4a7c2c;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+            background: #2d5016;
+            transform: translateY(-2px);
+            box-shadow: 0 7px 20px rgba(0,0,0,0.3);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .nav-menu {
+                gap: 15px;
+                font-size: 0.9em;
+            }
+
+            .section-title {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Callejeando por el barrio Armenia</h1>
+            <p>Muy pronto podrás descubrir las historias, espacios y personas que hacen único nuestro barrio</p>
+        </div>
+    </section>
+
+    <section id="presentacion" class="presentacion">
+        <h2 class="section-title">Presentación</h2>
+        <div class="presentacion-content">
+            <p>
+                <strong>Callejeando Artmenia entre voces y relatos</strong> es una iniciativa ciudadana que busca reconocer, documentar y celebrar el patrimonio material e inmaterial de nuestro barrio Armenia. A través de este proyecto, 
+                te invitamos a recorrer las calles, conocer las voces de sus habitantes y descubrir los rincones que construyen 
+                la identidad de Armenia.
+            </p>
+            <p>
+                Este espacio es un homenaje a la memoria colectiva, un mapa vivo que se construye con las historias de 
+                quienes hacen parte de este territorio. Cada esquina tiene algo que contar, cada persona guarda una 
+                historia que merece ser escuchada y compartida.
+            </p>
+            <p>
+                Te invitamos a ser parte de este recorrido, a redescubrir tu barrio con nuevos ojos y a contribuir 
+                con tus propias experiencias a este ejercicio de construcción comunitaria.
+            </p>
+        </div>
+    </br>
+        <h2 class="section-title">Información general</h2>
+        <div class="presentacion-content">
+            <p>
+                 <strong>Callejeando Artmenia entre voces y relatos</strong> es un proyecto ganador de la Beca La historia contada 
+                 en barrios y manifestaciones culturales de Bogotá, en su Categoría 2. Investigación en barrios localizados en el 
+                 área afectada del PEMP del Sector de Interés Urbanístico de Teusaquillo.
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Callejeando por el barrio Armenia</p>
+        <p style="margin-top: 10px; opacity: 0.8;">Un proyecto de construcción colectiva de memoria y territorio</p>
+    </footer>
+
+</body>
+</html>
