@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Callejeando por el barrio Armenia</title>
+<meta charset="utf-8">
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+<style> @-ms-viewport { width: device-width; } </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+<link rel="stylesheet" href="vendor/reset.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="custom.css">
+
+<style>
+  /* Simple navbar styling */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #222;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    z-index: 1000;
+  }
+
+  .navbar button {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+  }
+
+  .navbar button:hover {
+    background-color: #666;
+  }
+
+  /* Push content below the navbar */
+  body {
+    margin: 0;
+    padding-top: 50px;
+  }
+</style>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PNDF2SSL');</script>
+<!-- End Google Tag Manager -->
+
+</head>
+<body class="multiple-scenes ">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PNDF2SSL"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div id="pano"></div>
+
+<div id="sceneList">
+  <ul class="scenes">
+    
+      <a href="javascript:void(0)" class="scene" data-id="0-punto01">
+        <li class="text">1. El barrio Armenia sobre la Caracas</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="1-punto02">
+        <li class="text">2. El corredor de las jardineras</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="2-punto03">
+        <li class="text">3. El parque Armenia</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="3-punto04">
+        <li class="text">4. La casona y parque El Pony</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="4-punto05">
+        <li class="text">5. La casa del General París y su vecindario</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="5-punto06">
+        <li class="text">6. Documento faltante</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="6-punto07">
+        <li class="text">7. La YMCA y la sinagoga</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="7-punto08">
+        <li class="text">8. El Umbral de la Reconciliación</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="8-punto09">
+        <li class="text">9. El corredor de Las Mercedes</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="9-punto10">
+        <li class="text">10. Documento faltante</li>
+      </a>
+    
+  </ul>
+</div>
+
+<div id="homeButton">
+  <h1 class="textHome"><a href="../index.html">Volver al inicio</a></h1>
+</div>
+
+<div id="titleBar">
+  <h1 class="sceneName"></h1>
+</div>
+
+<a href="javascript:void(0)" id="soundToggle">
+  <img class="icon off" src="img/soundFull.png">
+  <img class="icon on" src="img/soundX.png">
+</a>
+
+<a href="javascript:void(0)" id="autorotateToggle">
+  <img class="icon off" src="img/play.png">
+  <img class="icon on" src="img/pause.png">
+</a>
+
+<a href="javascript:void(0)" id="fullscreenToggle">
+  <img class="icon off" src="img/fullscreen.png">
+  <img class="icon on" src="img/windowed.png">
+</a>
+
+<a href="javascript:void(0)" id="sceneListToggle">
+  <img class="icon off" src="img/expand.png">
+  <img class="icon on" src="img/collapse.png">
+</a>
+
+<div id="bottomLeftImage">
+  <img src="../assets/img/Punto1.jpg" alt="Preview image">
+</div>
+
+<a href="javascript:void(0)" id="viewUp" class="viewControlButton viewControlButton-1">
+  <img class="icon" src="img/up.png">
+</a>
+<a href="javascript:void(0)" id="viewDown" class="viewControlButton viewControlButton-2">
+  <img class="icon" src="img/down.png">
+</a>
+<a href="javascript:void(0)" id="viewLeft" class="viewControlButton viewControlButton-3">
+  <img class="icon" src="img/left.png">
+</a>
+<a href="javascript:void(0)" id="viewRight" class="viewControlButton viewControlButton-4">
+  <img class="icon" src="img/right.png">
+</a>
+<a href="javascript:void(0)" id="viewIn" class="viewControlButton viewControlButton-5">
+  <img class="icon" src="img/plus.png">
+</a>
+<a href="javascript:void(0)" id="viewOut" class="viewControlButton viewControlButton-6">
+  <img class="icon" src="img/minus.png">
+</a>
+<audio id="myAudio" src="audio/punto1.mp3" preload="auto"></audio>
+<script src="vendor/screenfull.min.js" ></script>
+<script src="vendor/bowser.min.js" ></script>
+<script src="vendor/marzipano.js" ></script>
+
+<script src="data.js"></script>
+<script src="index.js"></script>
+
+</body>
+</html>

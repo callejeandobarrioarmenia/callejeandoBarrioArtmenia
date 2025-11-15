@@ -1,0 +1,59 @@
+/* Custom hotspot text formatting */
+.info-hotspot .info-hotspot-text h4 {
+  font-size: 1.0rem;
+  color: #4da3ff;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+}
+
+.info-hotspot .info-hotspot-text p {
+  color: #ddd;
+  margin-bottom: 0.6rem;
+  line-height: 1.4rem;
+}
+
+.info-hotspot .info-hotspot-text ul {
+  list-style-type: disc;
+  margin-left: 1.2rem;
+  color: #ccc;
+}
+
+/* Optional: style links inside hotspot */
+.info-hotspot .info-hotspot-text a {
+  color: #4da3ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+.info-hotspot .info-hotspot-text a:hover {
+  text-decoration: underline;
+}
+
+#bottomLeftImage {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+
+  height: 30vh;       /*  fixed height scaling with viewport  */
+  max-height: 300px;    /* height limit */
+
+  width: auto;          /* allow width to expand based on image proportion */
+
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+#bottomLeftImage img {
+  height: 100%;         /* fixed height */
+  width: auto;          /* automatic width from aspect ratio (631/753) */
+  display: block;
+  object-fit: contain;  /* show full image without cropping */
+}
+
+/*Move image to right */ @media (max-height: 750px) { 
+  
+  #bottomLeftImage { 
+    right: 20px; left: auto; 
+  } 
+}

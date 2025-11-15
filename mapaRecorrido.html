@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Mapa del recorrido</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- ExtraMarkers CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-extra-markers@1.2.1/dist/css/leaflet.extra-markers.min.css" />
+
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montez&amp;display=swap">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/aos.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+
+    <style>
+        #map {
+            width: 100%;
+            aspect-ratio: 4 / 3; /* Ensures 4:3 ratio */
+            max-width: 100%;
+            border: 2px solid #ccc; /* optional */
+        }
+        .popup-img {
+            width: 150px;
+            height: auto;
+            display: block;
+            margin: 5px 0;
+        }
+        .popup-details {
+            font-size: 13px;
+            line-height: 1.3em;
+        }
+        .popup-title {
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 3px;
+        }
+        .popup-extra {
+            margin-top: 4px;
+            font-style: italic;
+            color: #555;
+        }
+    </style>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PNDF2SSL');</script>
+    <!-- End Google Tag Manager -->    
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PNDF2SSL"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top border-bottom">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+            <img src="assets/img/callejeandologo.svg" alt="Logo"> 
+        </a>
+
+        <!-- Hamburger Button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon text-white "></span>
+        </button>
+
+        <!-- Collapsible Links -->
+        <div class="collapse navbar-collapse justify-content-end text-white " id="navbarNav">
+            <ul class="navbar-nav">
+            <li class="nav-item"><a class="text-white nav-link" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="text-white nav-link" href="mapaRecorrido.html">Mapa del recorrido</a></li>
+            <!-- <li class="nav-item"><a class="text-white nav-link" href="cultura-urbanismo.html">Cultura - Urbanismo</a></li> -->
+            </ul>
+        </div>
+        </div>
+    </nav>
+
+    <div>
+        <div id="intro"><a href="index.html" target="" class="text-primary text-decoration-none"><img data-aos="fade" data-aos-duration="2500" data-aos-delay="50" id="loguitoArtmeniando" src="assets/img/callejeandologo.svg"></a>
+            <h2 data-aos="fade" data-aos-duration="2000" data-aos-delay="1300" id="tit1" style="font-weight: bold;">por el barrio Artmenia</h2>
+            <div class="card-group p-5 mx-auto" style="max-width: 1300px;">
+                <div class="card border-primary">
+                    <div class="card-body">
+
+                        <h1 class="card-title text-primary mb-3">Mapa del recorrido</h1>
+                        <p>
+                            Navega el mapa para ver la ubicación de los puntos. Haz click en cada punto para lanzar el recorrido. 
+                        </p>
+
+                    </div>
+
+                    <div id="map"></div>
+
+                    <div class="card-body">
+
+                        <!-- Leaflet JS -->
+                        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+                        
+                        <!-- ExtraMarkers JS -->
+                        <script src="https://cdn.jsdelivr.net/npm/leaflet-extra-markers@1.2.1/dist/js/leaflet.extra-markers.min.js"></script>
+
+                        <script>
+                            // Bounds
+                            const southWest = L.latLng(4.6157, -74.0748);
+                            const northEast = L.latLng(4.621, -74.0702);
+                            const bounds = L.latLngBounds(southWest, northEast);
+                            const center = bounds.getCenter();
+
+                            // Map
+                            const map = L.map('map', {
+                            center: center,
+                            zoom: 17,
+                            maxBounds: bounds,
+                            maxBoundsViscosity: 1.0
+                            });
+
+                            // Tile layer
+                            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                            attribution: '© OpenStreetMap contributors',
+                            maxZoom: 19
+                            }).addTo(map);
+
+                            // Transparent bounds rectangle
+                            L.rectangle(bounds, { color: "#225544", weight: 3, fillOpacity: 0 }).addTo(map);
+
+                            // Fixed list of markers with details
+                            const points = [
+                            {
+                                lat: 4.6176683, lng: -74.07177, color: 'red', type: 'text',
+                                details: {
+                                title: '1. El barrio Armenia sobre la Caracas',
+                                content: '<a href="recorridovirtual/index.html?sceneId=0-punto01" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: ''
+                                }
+                            },
+                            {
+                                lat: 4.6165786, lng: -74.0730897, color: 'green', type: 'text',
+                                details: {
+                                title: '2. El corredor de las jardineras',
+                                content: '<a href="recorridovirtual/index.html?sceneId=1-punto02" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: ''
+                                }
+                            },
+                            {
+                                lat: 4.61742, lng: -74.073299, color: 'blue', type: 'text',
+                                details: {
+                                title: '3. El parque Armenia',
+                                content: '<a href="recorridovirtual/index.html?sceneId=2-punto03" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: ''
+                                }
+                            },
+                            {
+                                lat: 4.6195707, lng: -74.0718697, color: 'orange', type: 'text',
+                                details: {
+                                title: '4. La casona y parque El Pony',
+                                content: '<a href="recorridovirtual/index.html?sceneId=3-punto04" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: ''
+                                }
+                            },
+                            {
+                                lat: 4.6200079, lng: -74.072191, color: 'purple', type: 'text',
+                                details: {
+                                title: '5. La casa del General París y su vecindario',
+                                content: '<a href="recorridovirtual/index.html?sceneId=4-punto05" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: ''
+                                }
+                            },
+                            {
+                                lat: 4.6189447, lng: -74.072939, color: 'cyan', type: 'text',
+                                details: {
+                                title: '6. Documento en construcción',
+                                content: '<a href="recorridovirtual/index.html?sceneId=5-punto06" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: ''
+                                }
+                            },
+                            {
+                                lat: 4.6184171, lng: -74.0732192, color: 'pink', type: 'text',
+                                details: {
+                                title: '7. La YMCA y la sinagoga',
+                                content: '<br><a href="recorridovirtual/index.html?sceneId=6-punto07" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: ''
+                                }
+                            },
+                            {
+                                lat: 4.6182042, lng: -74.074264, color: 'yellow', type: 'text',
+                                details: {
+                                title: '8. El Umbral de la Reconciliación',
+                                content: '<br><a href="recorridovirtual/index.html?sceneId=7-punto08" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: ''
+                                }
+                            },
+                            {
+                                lat: 4.6197723, lng: -74.0744377, color: 'black', type: 'text',
+                                details: {
+                                title: '9. El corredor de Las Mercedes',
+                                content: '<br><a href="recorridovirtual/index.html?sceneId=8-punto09" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: ''
+                                }
+                            },
+                            {
+                                lat: 4.6208455, lng: -74.0717385, color: 'green', type: 'text',
+                                details: {
+                                title: '10. La alameda de la 32',
+                                content: '<br><a href="recorridovirtual/index.html?sceneId=9-punto10" target="" class="text-primary text-decoration-none">Lanzar vista en 360</a>',
+                                extra: ''
+                                }
+                            }
+                            ];
+
+                            // Add markers
+                            points.forEach((point, i) => {
+                            const icon = L.ExtraMarkers.icon({
+                                icon: 'fa-number',
+                                number: i + 1,
+                                markerColor: point.color,
+                                shape: 'circle'
+                            });
+
+                            let popupContent = `
+                                <div class="popup-details">
+                                <div class="popup-title">${point.details.title}</div>
+                                <div>${point.details.content}</div>
+                            `;
+
+                            if (point.type === 'image') {
+                                popupContent += `<img class="popup-img" src="${point.content}" alt="Image">`;
+                            } else if (point.type === 'book') {
+                                popupContent += `<div>${point.content}</div>`;
+                            } else if (point.type === 'audio') {
+                                popupContent += `<audio controls src="${point.content}"></audio>`;
+                            } else if (point.type === 'video') {
+                                popupContent += `<video width="200" controls><source src="${point.content}" type="video/mp4"></video>`;
+                            }
+
+                            popupContent += `<div class="popup-extra">${point.details.extra}</div></div>`;
+
+                            L.marker([point.lat, point.lng], { icon: icon })
+                                .addTo(map)
+                                .bindPopup(popupContent);
+                            });
+                        </script>
+
+
+                        <div class="card-body">
+                            <p class="card-text">Haz click en los puntos para ver información preliminar o cargar la visualización 360 de cada uno.</p>
+                            
+                                <div class="d-flex justify-content-between align-items-center mt-5">
+                                    <a href="index.html" class="btn btn-outline-primary btn-sm">
+                                        <i class="fa-solid fa-arrow-left me-1"></i> Volver al inicio
+                                    </a>
+                                    <a href="recorridovirtual/index.html" class="btn btn-primary btn-sm" style="--bs-primary: #0066a6;">
+                                        <i class="fa-solid fa-map-location-dot me-1"></i> Ir al recorrido 360
+                                    </a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid" style="background: #0066a6; width: 100%;--bs-primary: #0066a6;--bs-primary-rgb: 0,102,166;">
+        <footer class="text-center footer pt-4">
+            <div class="text-end" style="height: 0px;"><a href="#top"><i class="fa fa-angle-up" style="font-size: 24px;color: white;"></i></a></div>
+            <div class="d-flex align-items-center"></div>
+            <p class="text-light"><strong>Callejeando en Artmenia. Entre voces y relatos.</strong><br>Es el proyecto ganador de la Beca La historia contada en barrios y manifestaciones
+                culturales de Bogotá del Programa Distrital de Estímulos 2025 de la Secretaría Distrital de Cultura, Recreación y Deporte, en la Categoría 2. Investigación en barrios 
+                localizados en el área afectada del PEMP del Sector de Interés Urbanístico de Teusaquillo.</p><p class="text-light"><strong>Colectivo Patrimonios en Emergencia. 2025 </strong>
+            </p>
+        </footer>
+    </div>
+
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/aos.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/scripts.js"></script>
+</body>
+
+</html>
