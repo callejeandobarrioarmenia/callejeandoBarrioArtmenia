@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ficha patrimonial punto 4</title>
+  <script src="https://cdn.jsdelivr.net/npm/pdfobject@2.3.0/pdfobject.min.js"></script>
+  <style>body,html{height:100%;margin:0}#viewer{height:100vh}</style>
+</head>
+<body>
+  <div id="viewer">Cargando PDF…</div>
+  <script>
+    // relative path to PDF inside same GH Pages site
+    const pdfUrl = "/P04_V3.pdf";
+    PDFObject.embed(pdfUrl, "#viewer", {
+      fallbackLink: "<p>Este navegador no soporta visualización de archivos PDF.</p>",
+      pdfOpenParams: { view: "FitH" }
+    });
+  </script>
+</body>
+</html>
