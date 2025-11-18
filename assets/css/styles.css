@@ -199,3 +199,25 @@ a:hover {
 .infografia-text-cont p{
   text-align: justify;
 }
+
+/* Sponsor strip anchored at bottom of intro */
+.sponsor-strip {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+}
+
+/* Logo style */
+.sponsor-logo {
+    height: 8vh;
+    width: auto;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+}
+
+.sponsor-logo:hover {
+    opacity: 1;
+}
