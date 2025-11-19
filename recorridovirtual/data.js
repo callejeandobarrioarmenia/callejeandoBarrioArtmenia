@@ -655,7 +655,7 @@ var APP_DATA = {
     },
     {
       "id": "5-punto06",
-      "name": "6. Documento en construcción",
+      "name": "6. La casa rosada y alrededores",
       "previewImage": "thumb06.jpg",
       "levels": [
         {
@@ -1175,7 +1175,7 @@ var APP_DATA = {
     },
     {
       "id": "9-punto10",
-      "name": "10. La alameda de la 32",
+      "name": "10. Calle 32 con carrera 16.",
       "previewImage": "thumb10.jpg",
       "levels": [
         {
@@ -1278,7 +1278,7 @@ var APP_DATA = {
         {
           "yaw": -1.3106509309243762,
           "pitch": -0.046624659824068715,
-          "title": "Documento faltante",
+          "title": "Calle 32 con carrera 16",
           "text": `
             <h4 class="mb-2 text-primary">Información</h4>
             <p>
