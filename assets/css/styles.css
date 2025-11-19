@@ -202,7 +202,8 @@ a:hover {
 
 /* Sponsor strip anchored at bottom of intro */
 .sponsor-strip {
-    position: absolute;
+    /* position: absolute; */
+    padding-top: 80px;
     bottom: 0;
     width: 100%;
     background: transparent;
