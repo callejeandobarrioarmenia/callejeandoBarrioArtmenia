@@ -484,31 +484,38 @@ var APP_DATA = {
         //   "text": `  `
         // },
         {
-          "yaw": 1.7106509309243762,
+          "yaw": Math.PI*2.5/10,
           "pitch": -0.046624659824068715,
-          "title": "La casona y parque El Pony",
+          "title": "Casa histórica del Parque Pony",
           "text": `
             <h4 class="mb-2 text-primary">Información</h4>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Vivamus placerat felis nec dui varius, non dignissim orci luctus.
+              La casona situada en el parque Pony es una de las antiguas casas que pertenecieron a la familia Sierra, herederos de la hacienda Armenia. Ha cambiado de propietarios y ha sido habitada por diversas familias durante la segunda mitad del siglo XX. Posteriormente, fue utilizada como inquilinato o para campañas políticas. Actualmente es usada  eventualmente para grabación de telenovelas. El costado occidental fue adquirido por la Organización de Pueblos Indigenas del Amazonas Colombiano (OPIAC).
             </p>
-            <ul>
-              <li><strong>Información 1:</strong> varius, non dignissim orci</li>
-              <li><strong>Información 2:</strong> 1925</li>
-              <li><strong>Información 3:</strong> Restaurada</li>
-            </ul>
-              <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Vivamus placerat felis nec dui varius, non dignissim orci luctus.
-            </p>
-            <ul>
-              <li><strong>Información 1:</strong> varius, non dignissim orci</li>
-              <li><strong>Información 2:</strong> 1925</li>
-              <li><strong>Información 3:</strong> Restaurada</li>
-            </ul>
           `
-        }
+        },
+        {
+          "yaw": Math.PI*6/10,
+          "pitch": -0.046624659824068715,
+          "title": "El Parque Pony",
+          "text": `
+            <h4 class="mb-2 text-primary">Información</h4>
+            <p>
+              El parque Pony es un espacio verde que hizo parte de la urbanización La Equidad, conocida posteriormente como Teusaquillo Sur. El parque ha sido reconocido con diferentes nombres y el nombre más popular actualmente se le atribuye a la promoción del la bebida de la cervecera Bavaria. Está rodeado de vías con basante flujo vehicular, lo que genera un efecto borde en su uso recreativo por los residentes. Destacan las enormes araucarias en el centro del parque y los eucaliptos a su alrededor.
+            </p>
+          `
+        },
+        {
+          "yaw": Math.PI*9/10,
+          "pitch": -0.046624659824068715,
+          "title": "Edificaciones en deterioro.",
+          "text": `
+            <h4 class="mb-2 text-primary">Información</h4>
+            <p>
+              Los edificios ubicados en el borde norte y sur del parque Pony están en progresivo estado de deterioro. Estos edificios, por lo general, son utilizados como inquilinatos o para campañas políticas. Sobre el costado sur destaca una de las casas más apreciadas por los entrevistados, cubierta de hiedra y donde actualmente se encuentra la casa cultural denominada "Semilla Estelar".
+            </p>
+          `
+        },
       ]
     },
     {
@@ -628,29 +635,36 @@ var APP_DATA = {
         {
           "yaw": -2.3,
           "pitch": 0,
-          "title": "La casa del General París y su vecindario",
+          "title": "La casa del General París Gordillo",
           "text": `
             <h4 class="mb-2 text-primary">Información</h4>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Vivamus placerat felis nec dui varius, non dignissim orci luctus.
+              Esta vivienda, levantada en la década de 1940, es recordada por su relación con el general Gabriel París Gordillo, figura central en la transición política de 1957. Su arquitectura conservada, los antejardines cuidados por jardineros del Palacio de Nariño y su antigua fachada cubierta de hiedra la convirtieron en un referente histórico del sector. Aunque el recubrimiento vegetal fue retirado en 2024 por problemas de humedad, sigue siendo un símbolo de permanencia y memoria barrial.
             </p>
-            <ul>
-              <li><strong>Información 1:</strong> varius, non dignissim orci</li>
-              <li><strong>Información 2:</strong> 1925</li>
-              <li><strong>Información 3:</strong> Restaurada</li>
-            </ul>
-              <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Vivamus placerat felis nec dui varius, non dignissim orci luctus.
-            </p>
-            <ul>
-              <li><strong>Información 1:</strong> varius, non dignissim orci</li>
-              <li><strong>Información 2:</strong> 1925</li>
-              <li><strong>Información 3:</strong> Restaurada</li>
-            </ul>
           `
         },
+        {
+          "yaw": Math.PI*8.5/10,
+          "pitch": 0,
+          "title": "Costado Oriental (Posible residencia de Ospina Pérez)",
+          "text": `
+            <h4 class="mb-2 text-primary">Información</h4>
+            <p>
+              Justo frente a la vivienda del general París se encuentra esta casa que, según versiones no confirmadas, pudo haber sido habitada por el expresidente Mariano Ospina Pérez cuando dirigía la firma Los Ospinas, constructora de la Urbanización Armenia. Con los años ha sido adaptada para distintos usos institucionales, modificando su patio interior y parte de sus jardines, aunque aún conserva elementos originales visibles al frente, como escaleras, puertas y ventanas.
+            </p>
+          `
+        },
+        {
+          "yaw": Math.PI*1/10,
+          "pitch": 0,
+          "title": "Vivienda de la Familia Moreno Acuña",
+          "text": `
+            <h4 class="mb-2 text-primary">Información</h4>
+            <p>
+              Hacia el costado nororiental se ubica la casa de la familia Moreno Acuña, recordada por su papel en la creación de la Asociación de Pesebristas de Colombia, activa en las décadas de 1960 y 1970. Este punto representa una dimensión cultural del sector, relacionada con las tradiciones navideñas, la participación comunitaria y el reconocimiento local hacia la familia que impulsó esta actividad artística.
+            </p>
+          `
+        }
       ]
     },
     {
@@ -758,27 +772,23 @@ var APP_DATA = {
         {
           "yaw": -1.1780972451,
           "pitch": -0.046624659824068715,
-          "title": "Documento faltante",
+          "title": "La Casa Rosada de Armenia",
           "text": `
             <h4 class="mb-2 text-primary">Información</h4>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Vivamus placerat felis nec dui varius, non dignissim orci luctus.
+              El antejardín de la Casa Rosada preserva la idea urbanística impulsada por Karl Brunner, quien defendía integrar los espacios naturales al entorno habitacional. Este tramo verde funciona como un ejemplo claro de esa concepción, manteniendo el carácter paisajístico concebido para las urbanizaciones de la época y aportando frescura y continuidad visual al sector.<br>Esta casa forma parte de un conjunto de tres viviendas diseñadas por el arquitecto Manuel de Vengoechea Mier a solicitud de familias unidas por parentesco. Su trabajo se refleja en la continuidad estilística de estas casas, que conservan elementos característicos de la arquitectura residencial del periodo y aportan coherencia al paisaje urbano inmediato.
             </p>
-            <ul>
-              <li><strong>Información 1:</strong> varius, non dignissim orci</li>
-              <li><strong>Información 2:</strong> 1925</li>
-              <li><strong>Información 3:</strong> Restaurada</li>
-            </ul>
-              <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Vivamus placerat felis nec dui varius, non dignissim orci luctus.
+          `
+        },
+        {
+          "yaw": Math.PI*3.1/10,
+          "pitch": 0.1,
+          "title": "La calle de los antejardines",
+          "text": `
+            <h4 class="mb-2 text-primary">Información</h4>
+            <p>
+              En esta cuadra hay hermosos antejardines cuidados activamente  por sus propietarios, aunque algunos han sido cubiertos y endurecidos con cemento. Estos antejardines son un elemento constitutivo del barrio desde sus inicios, pues las firmas urbanizadoras que se encargaron de vender los lotes daban libertad a los propietarios para que construyeran su propia casa siempre y cuando respetaran algunas normas, como mantener un antejardín siguiendo reglas precisas. Estos espacios, a medio camino entre lo público y lo privado, pues le pertenecen a particulares pero están a la vista  y por lo tanto abiertos al disfrute de los transeúntes hacen parte esencial del patrimonio urbano y natural del barrio.Hay una gran variedad de plantas florales, árboles y enredaderas.
             </p>
-            <ul>
-              <li><strong>Información 1:</strong> varius, non dignissim orci</li>
-              <li><strong>Información 2:</strong> 1925</li>
-              <li><strong>Información 3:</strong> Restaurada</li>
-            </ul>
           `
         }
       ]
@@ -892,23 +902,33 @@ var APP_DATA = {
           "text": `
             <h4 class="mb-2 text-primary">Información</h4>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Vivamus placerat felis nec dui varius, non dignissim orci luctus.
+              El edificio donde hoy funciona la YMCA (Asociación de Jóvenes Cristianos) es reconocido por los vecinos como la antigua sinagoga del sector. El Centro Cultural Israelita fue terminado en 1970 en terrenos adquiridos desde 1952 por miembros de la comunidad judía. En 1987 fue vendido y la congregación se trasladó al norte de la ciudad. El lugar, antes concebido como espacio litúrgico y comunitario, ha sido transformado en un centro de reunión juvenil con actividades sociales, culturales y servicios como comedor y alquiler de salones.
             </p>
-            <ul>
-              <li><strong>Información 1:</strong> varius, non dignissim orci</li>
-              <li><strong>Información 2:</strong> 1925</li>
-              <li><strong>Información 3:</strong> Restaurada</li>
-            </ul>
-              <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Vivamus placerat felis nec dui varius, non dignissim orci luctus.
+
+          `
+        },
+        {
+          "yaw": Math.PI*3.5/10,
+          "pitch": 0,
+          "title": "Casas Suizas o “Muñequeras” (Arquitectura peculiar aledaña)",
+          "text": `
+            <h4 class="mb-2 text-primary">Información</h4>
+            <p>
+              Junto a la ACJ se encuentran dos viviendas pequeñas diseñadas por un arquitecto suizo, parte de un conjunto de aproximadamente once casas conocidas por su apariencia delicada y singular. Originalmente tenían rejas de hierro forjado, estaban rodeadas de pinos y se insertaban en amplios espacios verdes. Con el paso del tiempo, han sido transformadas por sus propietarios y algunas muestran deterioro debido al robo constante del hierro, afectando tanto las fachadas como los antejardines.
             </p>
-            <ul>
-              <li><strong>Información 1:</strong> varius, non dignissim orci</li>
-              <li><strong>Información 2:</strong> 1925</li>
-              <li><strong>Información 3:</strong> Restaurada</li>
-            </ul>
+
+          `
+        },
+        {
+          "yaw": -Math.PI*8/10,
+          "pitch": 0,
+          "title": "Edificio Antiguo del Costado Oriental",
+          "text": `
+            <h4 class="mb-2 text-primary">Información</h4>
+            <p>
+              En el costado oriental se conserva uno de los edificios más antiguos de la urbanización Armenia, construido en la década de 1940. Aunque su interior ha tenido modificaciones, mantiene su fachada original, con excepción del antejardín y las rejas. Este punto funciona como testimonio arquitectónico del desarrollo inicial del barrio y permite comparar los estilos residenciales surgidos en distintos periodos.
+            </p>
+
           `
         }
       ]
@@ -1016,29 +1036,46 @@ var APP_DATA = {
         //   "text": `  `
         // },
         {
-          "yaw": -2.541592,
-          "pitch": 0.10466246598240,
-          "title": "El Umbral de la Reconciliación",
+          "yaw": -Math.PI/2,
+          "pitch": Math.PI/16,
+          "title": "El Umbral de la Reconciliación.",
           "text": `
             <h4 class="mb-2 text-primary">Información</h4>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Vivamus placerat felis nec dui varius, non dignissim orci luctus.
+              Este lugar surge como remanente urbano dejado por la demolición de edificaciones durante la construcción de TransMilenio. El vacío resultante generó la búsqueda de propuestas de revitalización, inicialmente impulsadas mediante Place Making, orientadas a convertir espacios abandonados en zonas activas para cafés o centros comunitarios. Aunque estas ideas no prosperaron, el sitio permaneció como un territorio abierto cuya transformación refleja tensiones políticas y urbanísticas de distintas administraciones.            </p>
+          `
+        },
+        {
+          "yaw": -2.541592,
+          "pitch": 0.10466246598240,
+          "title": "Territorio de Colectivos Barriales.",
+          "text": `
+            <h4 class="mb-2 text-primary">Información</h4>
+            <p>
+              Apropiación y tejido social. El Umbral de la Reconciliación es representativo para diversas agrupaciones del barrio, como Armenia Nuestra Casa, Circuito ARTmenia, el Grupo de Siembra, Los Paqueros y Basura Cero. Estas iniciativas impulsaron acciones ambientales, culturales y sociales durante la última década. Su presencia consolidó este lugar como un eje de organización comunitaria y construcción de tejido barrial.
             </p>
-            <ul>
-              <li><strong>Información 1:</strong> varius, non dignissim orci</li>
-              <li><strong>Información 2:</strong> 1925</li>
-              <li><strong>Información 3:</strong> Restaurada</li>
-            </ul>
-              <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Vivamus placerat felis nec dui varius, non dignissim orci luctus.
+          `
+        },
+        {
+          "yaw": Math.PI,
+          "pitch": -Math.PI*.3/10,
+          "title": "Murales y Grafitis de Memoria.",
+          "text": `
+            <h4 class="mb-2 text-primary">Información</h4>
+            <p>
+              Las culatas de los edificios que delimitan este espacio se transformaron en un lienzo de expresión artística, donde murales y grafitis representan la historia violenta del país y las demandas de verdad y reparación. Este punto funciona como escenario simbólico dentro del Eje de la Memoria de la Calle 26, enlazando el Museo Nacional de la Memoria, el Centro de Memoria Histórica y los cementerios históricos, reforzando su papel como lugar de reflexión urbana.
             </p>
-            <ul>
-              <li><strong>Información 1:</strong> varius, non dignissim orci</li>
-              <li><strong>Información 2:</strong> 1925</li>
-              <li><strong>Información 3:</strong> Restaurada</li>
-            </ul>
+          `
+        },
+        {
+          "yaw": Math.PI*.4/10,
+          "pitch": Math.PI*.2/10,
+          "title": "Gran jardinera.",
+          "text": `
+            <h4 class="mb-2 text-primary">Información</h4>
+            <p>
+              Esta es la jardinera más grande de las que fueron construidas por los vecinos del barrio en un intento por recuperar el patrimonio urbano y natural del barrio. Con el deseo de reverdcer el entorno y recuperar un punto muy degradado por las basuras, el mantenimiento lo llevan a cabo los vecinos del barrio y es una muestra permanente del esfuerzo colectivo.
+            </p>
           `
         }
       ]
@@ -1146,29 +1183,36 @@ var APP_DATA = {
         //   "text": `  `
         // },
         {
-          "yaw": -2.785165121324,
-          "pitch": -0.046624659824068715,
-          "title": "El corredor de Las Mercedes",
+          "yaw": -Math.PI*9.5/10,
+          "pitch": -Math.PI*.1/10,
+          "title": "Antigua Urbanización Las Mercedes",
           "text": `
             <h4 class="mb-2 text-primary">Información</h4>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Vivamus placerat felis nec dui varius, non dignissim orci luctus.
+              Este sector corresponde a una de las tres urbanizaciones que dieron origen al barrio Armenia. Cuatro manzanas de la antigua urbanización Las Mercedes conforman hoy su borde occidental, mientras que el resto se integra al barrio La Estrella. Se caracteriza por manzanas y predios más pequeños que los del Sur de Teusaquillo, lo que define un tejido urbano más compacto y una transición clara entre tipologías residenciales.
             </p>
-            <ul>
-              <li><strong>Información 1:</strong> varius, non dignissim orci</li>
-              <li><strong>Información 2:</strong> 1925</li>
-              <li><strong>Información 3:</strong> Restaurada</li>
-            </ul>
-              <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Vivamus placerat felis nec dui varius, non dignissim orci luctus.
+          `
+        },
+        {
+          "yaw": Math.PI/2,
+          "pitch": 0,
+          "title": "Herencia de la Revista Escala",
+          "text": `
+            <h4 class="mb-2 text-primary">Información</h4>
+            <p>
+              En la esquina norte se localiza un predio que ha ocupado y modificado el espacio público para funcionar como restaurante, entre otros usos. El negocio cambia frecuentemente de dueños y adapta la casa según sus necesidades. Tanto esta vivienda como sus vecinas sobre la calle 30 formaron parte del taller litográfico de la revista Escala, fundada en 1962 para difundir arquitectura y arte en el país, constituyendo un hito en la historia editorial y cultural de la zona.
             </p>
-            <ul>
-              <li><strong>Información 1:</strong> varius, non dignissim orci</li>
-              <li><strong>Información 2:</strong> 1925</li>
-              <li><strong>Información 3:</strong> Restaurada</li>
-            </ul>
+          `
+        },
+        {
+          "yaw": Math.PI*4.2/10,
+          "pitch": -Math.PI*.5/10,
+          "title": "Nuevo Edificio del Congreso de los Pueblos",
+          "text": `
+            <h4 class="mb-2 text-primary">Información</h4>
+            <p>
+              El nuevo edificio del Congreso de los Pueblos se levanta sobre un predio que durante décadas reflejó el abandono urbano del sector. Antes utilizado como parqueadero, este espacio fue transformado para albergar a uno de los movimientos sociales más representativos del país. Su presencia simboliza una recuperación del territorio, donde un lugar marcado por el deterioro se convierte en un punto de encuentro para organizaciones, liderazgos sociales y actividades de participación ciudadana.
+            </p>
           `
         }
       ]
@@ -1282,23 +1326,9 @@ var APP_DATA = {
           "text": `
             <h4 class="mb-2 text-primary">Información</h4>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Vivamus placerat felis nec dui varius, non dignissim orci luctus.
+              Este es el límite norte del barrio.En los años 30, cuando  esta zona fue urbanizada, era una calle ancha, arborizada y tranquila que representaba una forma del habitar moderno. Hoy en dia se ha convertido en una suerte de museo lineal con construcciones históricas de diferentes estilos, donde se mezclan usos comerciales, institucionales y residenciales. 
             </p>
-            <ul>
-              <li><strong>Información 1:</strong> varius, non dignissim orci</li>
-              <li><strong>Información 2:</strong> 1925</li>
-              <li><strong>Información 3:</strong> Restaurada</li>
-            </ul>
-              <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Vivamus placerat felis nec dui varius, non dignissim orci luctus.
-            </p>
-            <ul>
-              <li><strong>Información 1:</strong> varius, non dignissim orci</li>
-              <li><strong>Información 2:</strong> 1925</li>
-              <li><strong>Información 3:</strong> Restaurada</li>
-            </ul>
+
           `
         }
       ]    }
